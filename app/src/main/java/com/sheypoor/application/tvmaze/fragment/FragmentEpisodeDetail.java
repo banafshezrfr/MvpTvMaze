@@ -12,7 +12,7 @@ import android.widget.TextView;
 import com.sheypoor.application.tvmaze.R;
 import com.sheypoor.application.tvmaze.core.FragmentBase;
 import com.sheypoor.application.tvmaze.dto.response.episodeList.Episode;
-import com.sheypoor.application.tvmaze.presenter.episodeDetail.EpisodeDetaiPresenterImpl;
+import com.sheypoor.application.tvmaze.presenter.episodeDetailPresenter.EpisodeDetaiPresenterImpl;
 import com.sheypoor.application.tvmaze.util.ConstantServices;
 import com.sheypoor.application.tvmaze.util.UtilString;
 import com.sheypoor.application.tvmaze.view.EpisodeDetailView;

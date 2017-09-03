@@ -18,7 +18,7 @@ import com.sheypoor.application.tvmaze.core.ActivityBase;
 import com.sheypoor.application.tvmaze.event.Events;
 import com.sheypoor.application.tvmaze.fragment.FragmentEpisodeDetail;
 import com.sheypoor.application.tvmaze.fragment.FragmentEpisodeList;
-import com.sheypoor.application.tvmaze.presenter.movieAct.MovieActivityPresenterImpl;
+import com.sheypoor.application.tvmaze.presenter.movieActPresenter.MovieActivityPresenterImpl;
 import com.sheypoor.application.tvmaze.util.ConstantEvent;
 import com.sheypoor.application.tvmaze.view.MovieActivityView;
 

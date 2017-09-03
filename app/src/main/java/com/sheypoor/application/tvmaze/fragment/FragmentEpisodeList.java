@@ -13,7 +13,7 @@ import com.sheypoor.application.tvmaze.R;
 import com.sheypoor.application.tvmaze.adapter.AdapterEpisodeList;
 import com.sheypoor.application.tvmaze.core.FragmentBase;
 import com.sheypoor.application.tvmaze.dto.response.episodeList.Episode;
-import com.sheypoor.application.tvmaze.presenter.episodeList.EpisodeListPresenterImpl;
+import com.sheypoor.application.tvmaze.presenter.episodeListPresenter.EpisodeListPresenterImpl;
 import com.sheypoor.application.tvmaze.view.EpisodeListView;
 
 import java.util.ArrayList;

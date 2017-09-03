@@ -1,4 +1,4 @@
-package com.sheypoor.application.tvmaze.presenter.movieAct;
+package com.sheypoor.application.tvmaze.presenter.movieActPresenter;
 
 import android.content.Intent;
 import android.net.Uri;
