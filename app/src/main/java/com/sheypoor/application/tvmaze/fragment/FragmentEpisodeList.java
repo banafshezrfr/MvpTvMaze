@@ -13,7 +13,7 @@ import com.sheypoor.application.tvmaze.R;
 import com.sheypoor.application.tvmaze.adapter.AdapterEpisodeList;
 import com.sheypoor.application.tvmaze.core.FragmentBase;
 import com.sheypoor.application.tvmaze.dto.response.episodeList.Episode;
-import com.sheypoor.application.tvmaze.presenter.EpisodeListPresenterImpl;
+import com.sheypoor.application.tvmaze.presenter.episodeList.EpisodeListPresenterImpl;
 import com.sheypoor.application.tvmaze.view.EpisodeListView;
 
 import java.util.ArrayList;
@@ -26,12 +26,12 @@ import butterknife.ButterKnife;
  * Created by Banafshe.Zarefar on 18/08/2017.
  */
 public class FragmentEpisodeList extends FragmentBase implements EpisodeListView {
-    private EpisodeListPresenterImpl episodeListPresenter;
-    private View view;
     @BindView(R.id.rv_episodes)
     RecyclerView rvEpisodes;
-    private AdapterEpisodeList adapterEpisodeList;
     List<Episode> episodeList = new ArrayList<>();
+    private EpisodeListPresenterImpl episodeListPresenter;
+    private View view;
+    private AdapterEpisodeList adapterEpisodeList;
 
     public FragmentEpisodeList() {
         // Required empty public constructor

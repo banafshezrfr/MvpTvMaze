@@ -1,4 +1,4 @@
-package com.sheypoor.application.tvmaze.presenter;
+package com.sheypoor.application.tvmaze.presenter.episodeList;
 
 import com.sheypoor.application.tvmaze.view.EpisodeListView;
 

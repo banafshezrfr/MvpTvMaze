@@ -1,14 +1,12 @@
-package com.sheypoor.application.tvmaze.presenter;
+package com.sheypoor.application.tvmaze.presenter.episodeDetail;
 
 import com.sheypoor.application.tvmaze.dto.response.episodeList.Episode;
 import com.sheypoor.application.tvmaze.event.Events;
-import com.sheypoor.application.tvmaze.service.episodeList.ServiceEpisodeList;
+import com.sheypoor.application.tvmaze.service.episodeDetail.ServiceEpisodeDetail;
 import com.sheypoor.application.tvmaze.service.factory.ServiceFactory;
 import com.sheypoor.application.tvmaze.util.ConstantServices;
 import com.sheypoor.application.tvmaze.util.RxBus;
-import com.sheypoor.application.tvmaze.view.EpisodeListView;
-
-import java.util.List;
+import com.sheypoor.application.tvmaze.view.EpisodeDetailView;
 
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
@@ -18,27 +16,26 @@ import rx.schedulers.Schedulers;
  * Created by Banafshe.Zarefar on 03/09/2017.
  */
 
-public class EpisodeListPresenterImpl implements EpisodeListPresenter {
-    EpisodeListView view;
-    String request = "1";
+public class EpisodeDetaiPresenterImpl implements EpisodeDetailPresenter {
+    EpisodeDetailView view;
 
     @Override
-    public void episodeListService() {
-        ServiceEpisodeList serviceEpisodeList = ServiceFactory.createRetrofitService(ServiceEpisodeList.class, ConstantServices.END_POINT, ConstantServices.SER_NAME_EDPISODE_LIST, view.getContext());
+    public void episodeDetailService(Long number, Long season) {
+        ServiceEpisodeDetail serviceEpisodeDetail = ServiceFactory.createRetrofitService(ServiceEpisodeDetail.class, ConstantServices.END_POINT, ConstantServices.SER_NAME_EDPISODE_DETAIL, view.getContext());
         RxBus.getInstance().send(new Events.EventLoadingView(true));
-        serviceEpisodeList.resp(request)
+        serviceEpisodeDetail.resp(season, number)
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new ResponseEpisodeListSubscriber());
+                .subscribe(new ResponseEpisodeDetailSubscriber());
     }
 
     @Override
-    public void attachEpisodeListView(EpisodeListView episodeListView) {
-        view = episodeListView;
-
+    public void attachEpisodeDetailView(EpisodeDetailView episodeDetailView) {
+        view = episodeDetailView;
     }
 
-    private class ResponseEpisodeListSubscriber extends Subscriber<List<Episode>> {
+
+    private class ResponseEpisodeDetailSubscriber extends Subscriber<Episode> {
         @Override
         public void onCompleted() {
             // do nothing here
@@ -49,10 +46,9 @@ public class EpisodeListPresenterImpl implements EpisodeListPresenter {
             RxBus.getInstance().send(new Events.EventLoadingView(false));
         }
 
-
         @Override
-        public void onNext(List<Episode> response) {
-            view.updateList(response);
+        public void onNext(Episode response) {
+            view.updateView(response);
             RxBus.getInstance().send(new Events.EventLoadingView(false));
         }
     }

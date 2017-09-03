@@ -12,7 +12,7 @@ import android.widget.TextView;
 import com.sheypoor.application.tvmaze.R;
 import com.sheypoor.application.tvmaze.core.FragmentBase;
 import com.sheypoor.application.tvmaze.dto.response.episodeList.Episode;
-import com.sheypoor.application.tvmaze.presenter.EpisodeDetaiPresenterImpl;
+import com.sheypoor.application.tvmaze.presenter.episodeDetail.EpisodeDetaiPresenterImpl;
 import com.sheypoor.application.tvmaze.util.ConstantServices;
 import com.sheypoor.application.tvmaze.util.UtilString;
 import com.sheypoor.application.tvmaze.view.EpisodeDetailView;
@@ -26,14 +26,14 @@ import butterknife.ButterKnife;
 public class FragmentEpisodeDetail extends FragmentBase implements EpisodeDetailView {
     EpisodeDetaiPresenterImpl presenter;
     View view;
-    private Long number;
-    private Long season;
     @BindView(R.id.tv_summary)
     TextView tvSummary;
     @BindView(R.id.tv_title)
     TextView tvTitle;
     @BindView(R.id.tv_time)
     TextView tvTime;
+    private Long number;
+    private Long season;
 
     public FragmentEpisodeDetail() {
         // Required empty public constructor

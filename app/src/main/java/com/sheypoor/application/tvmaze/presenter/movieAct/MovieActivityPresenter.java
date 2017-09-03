@@ -1,4 +1,4 @@
-package com.sheypoor.application.tvmaze.presenter;
+package com.sheypoor.application.tvmaze.presenter.movieAct;
 
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.FloatingActionButton;
